@@ -24,7 +24,7 @@ class HangmanManager {
   // Fetch the dictionary from the external file
   async loadDictionary() {
     try {
-      const response = await fetch('/artifacts/hangman.dictionary.txt');
+      const response = await fetch(process.env.PUBLIC_URL + '/artifacts/hangman.dictionary.txt');
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
