@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evil Hangman</title>
+    <link rel="stylesheet" href="hangman.css"> 
+</head>
+<body>
+    <h1>Evil Hangman</h1>
+    <div id="setup">
+        <form>
+            <form>
+                <div class="input-group">
+                    <label for="wordLength">Word Length:</label>
+                    <input type="number" id="wordLength" min="1" required>
+                </div>
+                <div class="input-group">
+                    <label for="maxGuesses">Max Wrong Guesses:</label>
+                    <input type="number" id="maxGuesses" min="1" required>
+                </div>
+            </form>
+            <button id="startGame" class="btn">Start Game</button>
+        </form>
+    </div>
+    <div id="game" class="hidden">
+        <p>Guesses Left: <span id="guessesLeft"></span></p>
+        <p>Pattern: <span id="pattern"></span></p>
+        <p>Guessed Letters: <span id="guessed"></span></p>
+        <label for="guess">Your Guess:</label>
+        <input type="text" id="guess" maxlength="1">
+        <button id="submitGuess">Submit Guess</button>
+    </div>
+    <script src="hangman.js"></script>
+    <script>
+        let game;
+
+        document.getElementById("startGame").addEventListener("click", () => {
+            const length = parseInt(document.getElementById("wordLength").value);
+            const max = parseInt(document.getElementById("maxGuesses").value);
+            game = new HangmanManager(length, max);
+
+            document.getElementById("setup").classList.add("hidden");
+            document.getElementById("game").classList.remove("hidden");
+            updateUI();
+        });
+
+        document.getElementById("submitGuess").addEventListener("click", () => {
+            const guessInput = document.getElementById("guess");
+            const guess = guessInput.value.toLowerCase();
+            if (guess) {
+                try {
+                    // Try recording the guess
+                    game.record(guess);
+                    updateUI();
+                } catch (e) {
+                    // Display any errors
+                    alert(e.message);
+                }
+                // Clear the input field after each guess attempt
+                guessInput.value = "";                
+            }
+        });
+
+
+
+        function updateUI() {
+            document.getElementById("guessesLeft").textContent = game.getGuessesLeft();
+            document.getElementById("pattern").textContent = game.getPattern();
+            document.getElementById("guessed").textContent = game.getGuesses().join(", ");
+            if (game.getGuessesLeft() <= 0 || !game.getPattern().includes("-")) {
+                alert("Game Over!");
+            }
+        }
+    </script>
+</body>
+</html>
