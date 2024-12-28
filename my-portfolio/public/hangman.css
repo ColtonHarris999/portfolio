@@ -1,0 +1,68 @@
+.hidden {
+  display: none;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  text-align: center;
+  background-color: #040c17; /* Dark blue background */
+  color: white;
+}
+
+h1 {
+  color: #d17a22; /* Autumn color */
+}
+
+button {
+  background-color: #d17a22; /* Autumn color */
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #b5651d; /* Darker shade for hover */
+}
+
+label {
+  color: white;
+}
+
+input {
+  background-color: #09121c; /* Slightly lighter dark blue for input */
+  color: white;
+  border: 1px solid #d17a22; /* Autumn color */
+  padding: 5px;
+  border-radius: 5px;
+  max-width: 300px; /* Limit the width of the input boxes */
+  margin: 5px auto; /* Center the input boxes and add spacing */
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align the label and input */
+  margin-bottom: 20px; /* Add spacing between input boxes */
+}
+
+.input-group label {
+  margin-bottom: 5px; /* Add space between the label and the input */
+}
+
+#setup, #game {
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 10px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+  }
+}

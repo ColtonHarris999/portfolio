@@ -1,0 +1,26 @@
+body {
+  background-color: #040c17;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 10px;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
