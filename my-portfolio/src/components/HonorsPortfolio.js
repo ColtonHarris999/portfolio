@@ -1,22 +1,22 @@
 import React from "react";
-import { Routes, Route, Link, useParams } from "react-router-dom";
+import { HashRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./HonorsPortfolio.css";
 
 const freshmanYear = [
   {
     title: "Autumn 21",
     description: "A great start to my time at UW",
-    imageUrl: "/photos/au21.png",
+    imageUrl: process.env.PUBLIC_URL + "/photos/au21.png",
   },
   {
     title: "Winter 22",
     description: "Why I started drinking coffee",
-    imageUrl: "/photos/wi22.png",
+    imageUrl: process.env.PUBLIC_URL + "/photos/wi22.png",
   },
   {
     title: "Spring 22",
     description: "Physics is pretty cool...",
-    imageUrl: "/photos/sp22.png",
+    imageUrl: process.env.PUBLIC_URL + "/photos/sp22.png",
   },
 ];
 
@@ -24,22 +24,22 @@ const sophomoreYear = [
   {
     title: "Autumn 22",
     description: "Equal parts Educatee & Educator",
-    imageUrl: "/photos/au22.png",
+    imageUrl: process.env.PUBLIC_URL + "/photos/au22.png",
   },
   {
     title: "Winter 23",
     description: "Finding my limit",
-    imageUrl: "/photos/wi23.png",
+    imageUrl: process.env.PUBLIC_URL + "/photos/wi23.png",
   },
   {
     title: "Spring 23",
     description: "Diving into CS Education",
-    imageUrl: "/photos/sp23.png",
+    imageUrl: process.env.PUBLIC_URL + "/photos/sp23.png",
   },
   {
     title: "Summer 23",
     description: "Enjoying the Summer",
-    imageUrl: "/photos/su23.png",
+    imageUrl: process.env.PUBLIC_URL + "/photos/su23.png",
   },
 ];
 
@@ -47,17 +47,17 @@ const juniorYear = [
   {
     title: "Autumn 23",
     description: "An Unexpected Journey",
-    imageUrl: "/photos/au23.png",
+    imageUrl: process.env.PUBLIC_URL + "/photos/au23.png",
   },
   {
     title: "Winter 24",
     description: "Finding what I don't like",
-    imageUrl: "/photos/wi24.png",
+    imageUrl: process.env.PUBLIC_URL + "/photos/wi24.png",
   },
   {
     title: "Spring 24",
     description: "Capstone Courses",
-    imageUrl: "/photos/sp24.png",
+    imageUrl: process.env.PUBLIC_URL + "/photos/sp24.png",
   },
 ];
 
@@ -65,7 +65,7 @@ const seniorYear = [
   {
     title: "Autumn 24",
     description: "One more time",
-    imageUrl: "/photos/au24.png",
+    imageUrl: process.env.PUBLIC_URL + "/photos/au24.png",
   },
   {
     title: "Winter 25",

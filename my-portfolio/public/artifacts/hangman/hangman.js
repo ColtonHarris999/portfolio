@@ -14,6 +14,7 @@ class HangmanManager {
     this.wordLength = length;
     
     // Load dictionary and filter words by length
+    this.words = null;
     this.loadDictionary().then(dictionary => {
       this.words = dictionary.filter(word => word.length === length);
     }).catch(error => {
@@ -24,12 +25,14 @@ class HangmanManager {
   // Fetch the dictionary from the external file
   async loadDictionary() {
     try {
-      const response = await fetch('/artifacts/hangman.dictionary.txt');
+      const response = await fetch(`/artifacts/hangman/dictionary.txt`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       const data = await response.text();
-      return data.split('\n').map(word => word.trim());
+      const data_split = data.split('\n').map(word => word.trim());
+      console.log(data_split[0]);
+      return data_split
     } catch (error) {
       console.error('There was an error fetching the dictionary:', error);
       return [];  // Return an empty array in case of error
@@ -49,7 +52,9 @@ class HangmanManager {
   }
 
   getPattern() {
-    if (this.words.length === 0) {
+    if (this.words == null) {
+      console.log("No dictionary loaded (possibly yet)");
+    } else if (this.words.length === 0) {
       throw new Error("No words in dictionary of correct length");
     }
     return this.currentPattern;

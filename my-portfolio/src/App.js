@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { HashRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 // Components for each tab
 import Home from "./components/Home";
@@ -46,28 +46,26 @@ function App() {
           {/* HOME PAGE */}
           <Route path="/" element={<Home />} />
 
-          {/* HONORS PORTFOLIO */}
+          {/* HONORS PORTFOLIO PAGES*/}
           <Route path="/honors-portfolio" element={<HonorsPortfolio />} />
-          <Route path="/honors-portfolio/Autumn 21" element={<Autumn21/>} />
-          <Route path="/honors-portfolio/Winter%22" element={<Winter22/>} />
-          <Route path="/honors-portfolio/Spring%22" element={<Spring22/>} />
-          <Route path="/honors-portfolio/Autumn%22" element={<Autumn22/>} />
-          <Route path="/honors-portfolio/Winter%23" element={<Winter23/>} />
-          <Route path="/honors-portfolio/Spring%23" element={<Spring23/>} />
-          <Route path="/honors-portfolio/Summer%23" element={<Summer23/>} />
-          <Route path="/honors-portfolio/Autumn%23" element={<Autumn23/>} />
-          <Route path="/honors-portfolio/Winter%24" element={<Winter24/>} />
-          <Route path="/honors-portfolio/Spring%24" element={<Spring24/>} />
-          <Route path="/honors-portfolio/Autumn%24" element={<Autumn24/>} />
+          <Route path="/honors-portfolio/Autumn 21" element={<Autumn21 />} />
+          <Route path="/honors-portfolio/Winter 22" element={<Winter22 />} />
+          <Route path="/honors-portfolio/Spring 22" element={<Spring22 />} />
+          <Route path="/honors-portfolio/Autumn 22" element={<Autumn22 />} />
+          <Route path="/honors-portfolio/Winter 23" element={<Winter23 />} />
+          <Route path="/honors-portfolio/Spring 23" element={<Spring23 />} />
+          <Route path="/honors-portfolio/Summer 23" element={<Summer23 />} />
+          <Route path="/honors-portfolio/Autumn 23" element={<Autumn23 />} />
+          <Route path="/honors-portfolio/Winter 24" element={<Winter24 />} />
+          <Route path="/honors-portfolio/Spring 24" element={<Spring24 />} />
+          <Route path="/honors-portfolio/Autumn 24" element={<Autumn24 />} />
 
           {/* PROJECTS */}
           <Route path="/projects" element={<Projects />} />
-          
         </Routes>
       </div>
     </Router>
   );
 }
-
 
 export default App;
