@@ -1,25 +1,44 @@
+.quarter-fall {
+  --primary-color: #d17a22; /* Orange for Fall */
+}
+
+.quarter-winter {
+  --primary-color: #8EC9D9; /* Light Blue for Winter */
+}
+
+.quarter-spring {
+  --primary-color: #CE85CC; /* Green for Spring */
+}
+
+.quarter-summer {
+  --primary-color: #fbc02d; /* Yellow for Summer */
+}
+
+:root {
+  --primary-color: #d17a22; /* Default color */
+  --text-color: #e0dcdf;
+}
+
 .quarter-page {
   margin: 20px;
   font-family: Arial, sans-serif;
+  color: var(--text-color);
 }
 
 .quarter-page h1 {
   text-align: center;
   margin-bottom: 40px;
   font-size: 2rem;
+  color: var(--primary-color);
 }
 
 .quarter-section {
   display: flex;
   align-items: center;
-  margin-bottom: 40px;
-  gap: 20px;
-}
-
-.media-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  padding: 0 10%;
+  gap: 30px;
 }
 
 .media-container img,
@@ -37,7 +56,7 @@
 .text-container h2 {
   font-size: 1.5rem;
   margin-bottom: 15px;
-  color: #d17a22; /* Matches the header color from your image */
+  color: var(--primary-color);
 }
 
 .text-container p {
@@ -46,20 +65,80 @@
   color: #e0dcdf;
 }
 
+iframe {
+  min-height: 300px;
+}
+
 .scrollable-frame {
   width: 100%;
-  height: 300px; /* Increased height to accommodate the game */
-  max-width: 800px; /* Optional: Restricts maximum width to prevent over-scaling */
+  height: 300px;
+  max-width: 300px;
   border: none;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
-/* Responsive adjustments */
 @media (max-width: 600px) {
   .scrollable-frame {
-      width: 100%;
-      height: 25%; /* Slightly smaller height for mobile devices */
+    width: 100%;
+    height: 200px;
   }
+  .quarter-page h1 {
+    font-size: 1.5rem;
+  }
+  .text-container h2 {
+    font-size: 1.2rem;
+  }
+  .text-container p {
+    font-size: 0.9rem;
+  }
+}
+
+.photo-stack {
+  display: flex;
+  flex-direction: column; /* Stack photos vertically */
+  align-items: center; /* Center align the photos */
+  gap: 20px; /* Space between photos */
+  width: 100%; /* Allow the container to take full width initially */
+  max-width: 300px; /* Restrict the maximum width to 80% of the viewport */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.photo {
+  max-width: 100%; /* Ensure photos do not exceed the container's width */
+  width: auto; /* Maintain natural scaling */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 500px; /* Optional: Restrict maximum height */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+}
+
+@media (max-width: 600px) {
+  .photo-stack {
+    max-width: 90%; /* Increase max width for smaller screens */
+  }
+  .photo {
+    max-height: 200px; /* Adjust maximum height for smaller screens */
+  }
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.carousel-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #333;
+  margin: 0 10px;
+  z-index: 1;
 }
